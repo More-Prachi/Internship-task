@@ -1,11 +1,7 @@
 <?php
 
 	require "../dbConfig/dbconfiguration.php";
-	// require "../dbConfig/userValidationToken.php";
-
-	// $val = checkToken($auth_token);
-
-	// if($val['status']==1){
+	
 
         define('ITEMS_PER_PAGE', 20);
 	    $page = (isset($_GET['page']) && is_numeric($_GET['page']) && $_GET['page'] > 0) ? (int) $_GET['page'] : 1;
@@ -44,25 +40,6 @@
 		$total_taxable_value = 0;
 		$total_igst = 0;
 
-		// $count = 0;
-
-			// while($data = mysqli_fetch_assoc($runQry)){
-			//     // $count++;
-			// 	// if ($count>3) {
-			// 	// 	break;
-			// 	// }else{
-			// 		$invoice_id = $data['id'];
-			// 		$invoice_product_qry = "SELECT * FROM `invoice_product` WHERE `invoice_id`='$invoice_id' AND `active`='1'";
-			// 		$run_product_qry = mysqli_query($conn, $invoice_product_qry);
-			// 		$data['products'] = mysqli_fetch_all($run_product_qry, MYSQLI_ASSOC);
-
-			// 		$total_amt = $total_amt + $data['net_total'];
-			// 		$total_taxable_value = $total_taxable_value + ($data['net_total'] - $data['gst']);
-			// 		$total_igst = $total_igst + $data['gst'];
-
-			// 		array_push($invoices, $data);
-			// 	}
-			// }
 
 			while ($data = mysqli_fetch_assoc($runQry)) {
 				$invoice_id = $data['id'];
